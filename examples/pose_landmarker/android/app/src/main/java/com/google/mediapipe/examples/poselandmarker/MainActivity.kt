@@ -38,6 +38,7 @@ class MainActivity : AppCompatActivity() {
         activityMainBinding.navigation.setupWithNavController(navController)
         activityMainBinding.navigation.setOnNavigationItemReselectedListener {
             // ignore the reselection
+
         }
     }
 

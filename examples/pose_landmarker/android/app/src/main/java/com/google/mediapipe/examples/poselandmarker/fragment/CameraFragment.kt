@@ -62,7 +62,7 @@ class CameraFragment : Fragment(), PoseLandmarkerHelper.LandmarkerListener {
     private var imageAnalyzer: ImageAnalysis? = null
     private var camera: Camera? = null
     private var cameraProvider: ProcessCameraProvider? = null
-    private var cameraFacing = CameraSelector.LENS_FACING_BACK
+    private var cameraFacing = CameraSelector.LENS_FACING_FRONT/*by me for changing camera*/
 
     /** Blocking ML operations are performed using this executor */
     private lateinit var backgroundExecutor: ExecutorService
@@ -357,7 +357,7 @@ class CameraFragment : Fragment(), PoseLandmarkerHelper.LandmarkerListener {
     private fun detectPose(imageProxy: ImageProxy) {
         poseLandmarkerHelper.detectLiveStream(
             imageProxy = imageProxy,
-            isFrontCamera = cameraFacing == CameraSelector.LENS_FACING_FRONT
+            isFrontCamera = cameraFacing == CameraSelector.LENS_FACING_FRONT/*by me for changing camera*/
         )
     }
 
